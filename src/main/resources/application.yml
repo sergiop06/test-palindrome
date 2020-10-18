@@ -1,0 +1,26 @@
+spring:
+  #h2:
+  # console:
+  #    enabled: true
+  #    path: /h2
+  datasource:
+    #url: jdbc:h2:mem:testdb
+    #username: sa
+    #password: password
+    #driverClassName: org.h2.Driver
+    platform: postgres 
+    url: jdbc:postgresql://postgres:5432/testdb
+    username: dbuser
+    password: password
+    hikari:
+        connectionTimeout: 30000
+  jpa:
+    databasePlatform: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        formatSql: true
+        jdbc:
+          lob:
+            non-contextual-creation: true
