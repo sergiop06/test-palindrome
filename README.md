@@ -38,8 +38,9 @@ En el body de la peticion deberá ir el nombre de usuario y contraseña del usua
         "password": "password"
     }
 ```    
-Al ser exitosa la peticion anterior, podremos observar un header de respuesta llamado Authorization, que tiene como contenido la palabra Bearer junto con el token JWT que debemos utilizar para el siguiente consumo. 
-**El contenido de dicho header debe ser agregado al Header llamado Authorization del siguiente punto **
+Al ser exitosa la peticion anterior, podremos observar un header de respuesta llamado Authorization, que tiene como contenido la palabra Bearer junto con el token JWT que debemos utilizar para el siguiente consumo.
+
+**El contenido de dicho header debe ser agregado al Header llamado Authorization del siguiente punto**
 
 
 3. Consumo enpdoint /palindromo
@@ -56,4 +57,11 @@ En el body de la peticion se debe enviar la palabra sobre la cual se desea extra
     {
         "word": "12345654321"
     }
-    
+
+Header de la peticion 
+
+Se debe agregar el header Authorization con el contenido copiado del punto anterior donde se encuentra el JWT token. 
+
+Ejemplo: 
+
+    Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYwMzkyMjU4NX0.WVKOodrroMtiVIByUHti_u4vxn9mFA2Hg8lJzRWMFg0H5os0wWC8GaT624glFx4j3YzF4OlgbN73oIANcLJH4g
