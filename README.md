@@ -4,7 +4,7 @@ Prueba backend grupo dot
 ##Descripción
 Este repositorio contiene el codigo fuente correspondiente a la prueba para la posicion de backend engineer del grupo dot realizada por Sergio Perez.
 
-###Despliegue 
+### Despliegue 
 
 _sobre la raiz del proyecto se deben ejecutar los siguientes comandos
 ```
@@ -13,7 +13,7 @@ _sobre la raiz del proyecto se deben ejecutar los siguientes comandos
 2. docker-compose up --build
 ```
 
-####Consumo del proyecto 
+#### Consumo del proyecto 
 
 1. se debe registrar in usuario el cual se autorizará para realizar el consumo del servicio palindromo
 ```
