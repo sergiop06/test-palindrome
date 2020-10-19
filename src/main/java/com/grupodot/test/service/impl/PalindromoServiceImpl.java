@@ -29,67 +29,68 @@ public class PalindromoServiceImpl implements PalindromoService{
 			}
 			else {
 				
-				int cont = 0;
+				
 				int posx=0;
 				int posy=0;
 				
-				int finx=0;
-				int finy=0;
 				int may=0;
+				String finalSubstring="";
 				
-				
-				for(int i = 1; i<wordAsArray.length;i++) {
-										
-					int j = i-1;
-					int k = i+1;
-					
-					while(j>-1 && k<wordAsArray.length) {
+				for(int i =0; i<wordAsArray.length;i++ ) {
+					for(int j=i+1;j<wordAsArray.length;j++) {
 						
-						System.out.println("j=="+j +"   "+ "K=="+k);
-												
-						if(wordAsArray[j]==wordAsArray[k]) {
-							System.out.println("Equalsr=="+wordAsArray[j]+" y "+wordAsArray[k]);
-							cont++;
-							posx=j;
-							posy=k;
-							System.out.println("posx=="+posx+"  "+"posy=="+posy);
-							
-						}else {
-							System.out.println("NOT Equalsr=="+wordAsArray[j]+" y "+wordAsArray[k]);
-							if(cont>may) {
-								System.out.println("cont>may==");
-								finx=posx;
-								finy=posy;
-								may=cont;
-								
+						String subString = word.substring(i,j+1);
+						//System.out.println("Substring "+ subString);
+						
+						if(isPalindrome(subString)) {
+							if(subString.length()>may) {
+								//System.out.println("Substring is palindrome and is greatest length"+ subString);
+								finalSubstring = subString;
+								may = subString.length();
+								//System.out.println("Length = "+ may);
+								posx = i;
+								posy = j; 
+								//System.out.println("POs x = "+ posx + "  "+"POs y = "+ posy);
 							}
-							cont =0;
-							System.out.println("Antes break   finx =="+finx+"   "+"finy=="+finy);
-							break;
 						}
-						System.out.println("fuera de los ifs"+ "posx=="+posx+"  "+"posy=="+posy);
-						System.out.println("finx =="+finx+"   "+"finy=="+finy);
 						
-						j--;
-						k++;
 						
 					}
-					
-					cont=0;
-
 				}
-				System.out.println("Fuera for finx =="+finx+"   "+"finy=="+finy);
-				out.setLongestPalindrome(word.substring(finx, finy+1));
+				
+				//System.out.println("Final substring "+ finalSubstring);
+				out.setLongestPalindrome(finalSubstring);
+				//System.out.println("FInaaaal POs x = "+ posx + "  "+"POs y = "+ posy);
+				
 
 			}
 			
 		}
 	
-		System.out.println("word=="+out.getLongestPalindrome());
+		//System.out.println("VOY A RETORNAR ESTAAAA=="+out.getLongestPalindrome());
 		return out;
 	}
 	
 
-	
+	public boolean isPalindrome(String word) {
+		
+		char[] wordAsArray = word.toCharArray();
+		boolean isPalindrome = true;
+		
+		int i = 0; 
+		int j = wordAsArray.length-1;
+		
+		while(i<=wordAsArray.length && i<j && j>=0  ) {
+			if(wordAsArray[i] != wordAsArray[j]) {
+				isPalindrome = false;
+				break;
+			}
+			
+			i++;
+			j--;
+		}
+		
+		return isPalindrome;
+	}
 	
 }
