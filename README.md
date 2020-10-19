@@ -51,7 +51,7 @@ Peticion de tipo POST a la ruta: **localhost:8080/palindromo**
 ```
 Body de la peticion 
     
-    En el body de la peticion se debe enviar la palabra sobre la cual se desea extraer el substring, en formato JSON: 
+En el body de la peticion se debe enviar la palabra sobre la cual se desea extraer el substring, en formato JSON: 
     
     {
         "word": "12345654321"
